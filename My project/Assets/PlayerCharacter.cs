@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerCharacter : BaseCharacter
 {
-    CharacterProperty playerProp = new CharacterProperty(10f, 10f);
+    public CharacterProperty objProp { get; private set; } = new CharacterProperty(20f, 20f);
     private Rigidbody2D playerRb;  // Change the type to Rigidbody2D
 
     // Start is called before the first frame update
@@ -21,7 +21,7 @@ public class PlayerCharacter : BaseCharacter
 
         if (playerRb)
         {
-            Move(playerRb, playerProp.speed, xMove, yMove);
+            Move(playerRb, objProp.speed, xMove, yMove);
         }
         else
         {
